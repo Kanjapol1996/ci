@@ -13,7 +13,7 @@ class User extends CI_Controller
     public function index()
     {
         $this->load->model('User_model');
-        $users = $this->user_model->getUser();
+        $users = $this->User_model->getUser();
         $data = array(
             'users' => $users
         );
@@ -24,7 +24,7 @@ class User extends CI_Controller
 
     public function adduser()
     {
-        $user_types = $this->user_type_model->getUsertype();
+        $user_types = $this->User_type_model->getUsertype();
         $data = [
             'user_types' => $user_types
         ];
@@ -36,7 +36,7 @@ class User extends CI_Controller
  
     public function show($userID = " ")
     {
-        $user = $this->user_model->getUserByID($userID);
+        $user = $this->User_model->getUserByID($userID);
         $datas = array(
             'user' => $user->row()
         );
@@ -58,7 +58,7 @@ class User extends CI_Controller
 
     public function edit($userID)
     {
-        $user = $this->user_model->getUserByID($userID);
+        $user = $this->User_model->getUserByID($userID);
         $data = array(
             'user' => $user->row()
         );
@@ -70,7 +70,7 @@ class User extends CI_Controller
     public function create()
     {
         $data = $this->input->post();
-        $result = $this->user_model->insertUser($data);
+        $result = $this->User_model->insertUser($data);
         // print_r($data);
         if($result){
             redirect('/user');
@@ -82,7 +82,7 @@ class User extends CI_Controller
     public function update($userID)
     {
         $data = $this->input->post();
-        $result = $this->user_model->update($userID, $data);
+        $result = $this->User_model->update($userID, $data);
         // // print_r($data);
         if($result){
              redirect('/user');
@@ -94,7 +94,7 @@ class User extends CI_Controller
     public function delete($userID)
     {
         $data = $this->input->post();
-        $result = $this->user_model->delete($userID, $data);
+        $result = $this->User_model->delete($userID, $data);
         // // print_r($data);
         if($result){
              redirect('/user');
