@@ -3,14 +3,10 @@ class Play extends CI_Controller
 {
     public function index()
     {
-        $name = "Kanjapol";
-        echo "$name";
-        echo '$name';
+        $this->load->model('user_model');
+        $user = $this->user_model->getUser();
+        print_r($user->result());
     }
-    // public function users()
-    // {
-    //     $db = $this->db->get('users');
-    //     print_r($db->result())."<br>";
-    // }
+
 
 }

@@ -1,6 +1,8 @@
 <div class="row">
 <div class="col-8">
 <br>
+<?php if ($this->session->has_userdata('user_id') and $this->session->userdata('user_type_id') == '1') {
+    ?>
 <form action="/user/update/<?php echo $user->user_id ?>" method="post">
         <div class="form-group">
             <label>Username</label>
@@ -9,6 +11,14 @@
         <div class="form-group">
             <label>Password</label>
             <input value="<?php echo $user->password ?>" name="password" type="password" class="form-control" placeholder="password">
+        </div>
+        <div class="form-group">
+        <label>ประเภทผู้ใช้งาน</label>
+        <select name="user_type_id" class="form-control">
+            <?php foreach ($user_types->result() as $user_type) { ?>
+                <option value="<?php echo $user_type->user_type_id ?>"><?php echo $user_type->name ?></option>
+             <?php } ?>
+         </select>
         </div>
         <div class="form-group">
            <label>ชื่อ</label>
@@ -24,6 +34,8 @@
        </div>
        <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> บันทึก</button>
 </form>
+<?php
+} ?>
 </div>
 <div class="col-4">
 <br>

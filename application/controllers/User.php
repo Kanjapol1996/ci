@@ -6,6 +6,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->model('user_model');
+        $this->load->model('user_type_model');
         //เมื่อเปิดหน้าใดจะทำงานอัติโนมัติโดยไม่ต้องออกคำสั่ง
     }
 
@@ -23,8 +24,12 @@ class User extends CI_Controller
 
     public function adduser()
     {
+        $user_types = $this->user_type_model->getUsertype();
+        $data = [
+            'user_types' => $user_types
+        ];
         $this->load->view('layout/header');
-        $this->load->view('user/adduser');
+        $this->load->view('user/adduser', $data);
         $this->load->view('layout/footer');
     
     }
@@ -97,5 +102,4 @@ class User extends CI_Controller
              echo "Has error";
         }
     }
-
 }
