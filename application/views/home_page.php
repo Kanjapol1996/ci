@@ -35,7 +35,7 @@
         <button type="button" class="btn btn-dark">Dark</button>
         <button type="button" class="btn btn-link">Link</button>
         <hr>
-        <<div class="row">
+        <div class="row">
         <div class="col-8"></div>
         <div class="col-4">
             <div class="card">
