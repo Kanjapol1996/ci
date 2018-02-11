@@ -3,6 +3,14 @@
             <br>
             <form action="/user/create" method="post">
                    <div class="form-group">
+                       <label>Username</label>
+                       <input name="username" type="text" class="form-control" placeholder="username">
+                   </div>
+                   <div class="form-group">
+                       <label>Password</label>
+                       <input name="password" type="password" class="form-control" placeholder="password">
+                   </div>
+                   <div class="form-group">
                        <label>ชื่อ</label>
                        <input name="fullname" type="text" class="form-control" placeholder="กรอกชื่อ สกุล">
                    </div>
@@ -14,6 +22,7 @@
                        <label>อายุ</label>
                        <input name="age" type="number" class="form-control" placeholder="กรอกอายุ">
                    </div>
+                   
                    <button type="submit" class="btn btn-primary"><i class="fas fa-check"></i> บันทึก</button>
            </form>
             </div>

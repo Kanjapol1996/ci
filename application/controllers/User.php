@@ -42,7 +42,15 @@ class User extends CI_Controller
         //row() แสดงข้อมูลเฉพาะ
         
     }
-    
+
+    public function profile()
+    {
+        echo "You are now login";
+        // $this->load->view('layout/header');
+        // $this->load->view('user/show', $datas);
+        // $this->load->view('layout/footer');      
+    }
+
     public function edit($userID)
     {
         $user = $this->user_model->getUserByID($userID);
