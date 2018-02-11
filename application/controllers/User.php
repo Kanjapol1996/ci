@@ -12,7 +12,7 @@ class User extends CI_Controller
 
     public function index()
     {
-        $this->load->model('user_model');
+        $this->load->model('User_model');
         $users = $this->user_model->getUser();
         $data = array(
             'users' => $users
