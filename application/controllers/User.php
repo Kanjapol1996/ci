@@ -18,7 +18,7 @@ class User extends CI_Controller
             'users' => $users
         );
         $this->load->view('layout/header');
-        $this->load->view('user/users', $data);
+        $this->load->view('user/user', $data);
         $this->load->view('layout/footer');
     }
 
