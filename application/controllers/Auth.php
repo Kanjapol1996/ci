@@ -12,7 +12,7 @@ class Auth extends CI_Controller
     {
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $result = $this->user_model->checkLogin($username, $password);
+        $result = $this->User_model->checkLogin($username, $password);
         if($result->num_rows() > 0){
             $user = $result->row();
             $data = [
